@@ -23,3 +23,8 @@ CREATE POLICY "允许公开读取" ON messages
 -- 允许所有人插入（因为是留言箱，允许匿名）
 CREATE POLICY "允许公开插入" ON messages
   FOR INSERT WITH CHECK (true);
+
+-- ===== v2：点赞功能 =====
+-- 新建表时直接包含点赞字段（老项目升级请执行 migration.sql）
+
+ALTER TABLE messages ADD COLUMN IF NOT EXISTS likes INTEGER NOT NULL DEFAULT 0;

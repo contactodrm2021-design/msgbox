@@ -1,5 +1,13 @@
 # 留言箱 - 部署指南
 
+## ⚠️ 老项目升级（v2 点赞功能）
+
+如果之前已部署过，只需在 Supabase 的 SQL Editor 中执行 `migration.sql`：
+
+```sql
+ALTER TABLE messages ADD COLUMN IF NOT EXISTS likes INTEGER NOT NULL DEFAULT 0;
+```
+
 ## 第一步：注册账号
 
 1. **Vercel** → vercel.com（用 GitHub 登录）
