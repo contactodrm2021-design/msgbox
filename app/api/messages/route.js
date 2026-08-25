@@ -34,7 +34,7 @@ export async function POST(request) {
     .insert([
       {
         name: name?.trim() || '匿名',
-        content: hasContent ? content.trim() : null,
+        content: hasContent ? content.trim() : '',
         file_url: hasFile ? file_url.trim() : null,
         file_name: file_name || null,
         tags: cleanTags,
